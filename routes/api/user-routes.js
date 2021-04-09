@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-// deconstruct the methods from pizza-controller allowing us to directly call them
+// deconstruct the methods from user-controller allowing us to directly call them
 const {
     getAllUsers,
     getUserById,
