@@ -1,5 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
-// const dateFormat = require('../utils/dateFormat');
+const formatDate = require('../utils/formatDate');
 
 const ReactionSchema = new Schema (
     {
@@ -20,10 +20,22 @@ const ReactionSchema = new Schema (
         createdAt: {
             type: Date,
             default: Date.now,
-            // get: createdAtVal => dateFormat(createdAtVal)  *** Create a utility function to format the date
+            get: createdAtVal => formatDate(createdAtVal)  // Create a utility function to format the date
         }
+    },
+    {
+        toJSON: {
+        virtuals: true,
+        getters: true
+        },
+        id: false
     }
 )
+
+// get the thought that the reaction is tied to
+ReactionSchema.virtual('thoughtId').get(function() {
+    return this.parent.__id;
+});
 
 const ThoughtSchema = new Schema (
     {
@@ -36,7 +48,7 @@ const ThoughtSchema = new Schema (
         createdAt: {
             type: Date,
             default: Date.now,
-            // get: createdAtVal => dateFormat(createdAtVal)  *** Create a utility function to format the date
+            get: createdAtVal => formatDate(createdAtVal)
         },
         username: {
             type: String,
@@ -47,7 +59,7 @@ const ThoughtSchema = new Schema (
     {
         toJSON: {
         virtuals: true,
-        // getters: true
+        getters: true
         },
         id: false
     }
@@ -57,6 +69,12 @@ const ThoughtSchema = new Schema (
 ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
+
+// virtual to get the User who owns a thought
+ThoughtSchema.virtual('userId').get(function() {
+    return parent = this.parent.__id; 
+});
+
 
 const Thought = model('Thought', ThoughtSchema);
 
