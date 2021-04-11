@@ -32,11 +32,6 @@ const ReactionSchema = new Schema (
     }
 )
 
-// get the thought that the reaction is tied to
-ReactionSchema.virtual('thoughtId').get(function() {
-    return this.parent.__id;
-});
-
 const ThoughtSchema = new Schema (
     {
         thoughtText: {
@@ -69,12 +64,6 @@ const ThoughtSchema = new Schema (
 ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
-
-// virtual to get the User who owns a thought
-ThoughtSchema.virtual('userId').get(function() {
-    return parent = this.parent.__id; 
-});
-
 
 const Thought = model('Thought', ThoughtSchema);
 

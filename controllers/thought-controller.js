@@ -88,10 +88,11 @@ const thoughtController = {
             { _id: params.thoughtId },
             { $pull: { reactions: { reactionId: params.reactionId } } }, //removes reply by reactionId
             { new: true } // returns updated thought without deleted reaction
-          )
-           .then(dbThoughtData => res.json(dbThoughtData))
-           .catch(err => res.json(err));
+        )
+        .then(dbThoughtData => res.json(dbThoughtData))
+        .catch(err => res.json(err));
     }
 }
 
 module.exports = thoughtController;
+
