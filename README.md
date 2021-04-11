@@ -1,15 +1,32 @@
-# social-network-api
+# Social Network API
 
-** AS A social media startup
-- I WANT an API for my social network that uses a NoSQL database
-- SO THAT my website can handle large amounts of unstructured data
+## Description
 
-** GIVEN a social network API
-- WHEN I enter the command to invoke the application
-THEN my server is started and the Mongoose models are synced to the MongoDB database
-- WHEN I open API GET routes in Insomnia Core for users and thoughts
-THEN the data for each of these routes is displayed in a formatted JSON
-- WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete users and thoughts in my database
-- WHEN I test API POST and DELETE routes in Insomnia Core
-THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+This project provides backend logic for a social networking site, built on MongoDB, Express and Node.js 
+
+## Screenshot
+
+![Final site](./screenshot.jpg)
+
+## Table of Contents 
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Video Walkthrough](#video-walkthrough)
+
+
+## Installation
+
+To install simply download or clone the repository, set up MongoDB on your local computer, navigate to the directory and run `npm install`. 
+
+## Usage
+
+To use the site, run npm start from the directory then connect to the server using a user provided frontend or an api testing tool such as insomnia core. Refer to the various routes files for information on the api.
+
+## Video Walkthrough
+ 
+You can view a video walkthrough of the api functionality here: https://drive.google.com/file/d/1i3zbqwCRVZJcspZ_F0wTqc_yvYAE78Ur/view
+
+## Questions
+
+For additional information on this project contact me by email at shawnevans.music@gmail.com or visit my GitHub page at https://github.com/bluesatyr.
