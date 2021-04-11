@@ -25,7 +25,7 @@ To use the site, run npm start from the directory then connect to the server usi
 
 ## Video Walkthrough
  
-You can view a video walkthrough of the api functionality here: https://drive.google.com/file/d/1i3zbqwCRVZJcspZ_F0wTqc_yvYAE78Ur/view
+You can view a video walkthrough of the api functionality here: https://drive.google.com/file/d/1i3zbqwCRVZJcspZ_F0wTqc_yvYAE78Ur/view?usp=sharing
 
 ## Questions
 
